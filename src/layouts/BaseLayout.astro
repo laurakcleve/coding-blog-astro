@@ -1,0 +1,47 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Footer from '../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import { Image } from '@astrojs/image/components'
+import profilePic from '../images/profile-pic.png'
+import TwitterIcon from '../components/TwitterIcon.astro'
+import GithubIcon from '../components/GithubIcon.astro'
+import '@fontsource/inter'
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class='bg-zinc-800 min-h-screen text-zinc-50 px-4'>
+    <header class='max-w-2xl mx-auto flex items-center py-5'>
+      <div class='flex items-center flex-1'>
+        <Image
+          src={profilePic}
+          width={50}
+          height={50}
+          alt='Profile picture'
+          class='rounded-full mr-4'
+        />
+        <a href='/' class='text-xl sm:text-2xl text-zinc-100'>{SITE_TITLE}</a>
+      </div>
+      <a
+        href='https://twitter.com/laurak_cleve'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        <TwitterIcon className='fill-emerald-300 w-6' />
+      </a>
+      <a
+        href='https://github.com/laurakcleve'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        <GithubIcon className='fill-emerald-300 ml-5' />
+      </a>
+    </header>
+    <slot />
+    <Footer />
+  </body>
+</html>
