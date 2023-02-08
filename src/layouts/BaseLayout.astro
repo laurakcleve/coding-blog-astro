@@ -1,12 +1,12 @@
 ---
 import BaseHead from '../components/BaseHead.astro'
-import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 import { Image } from '@astrojs/image/components'
 import profilePic from '../images/profile-pic.png'
 import TwitterIcon from '../components/TwitterIcon.astro'
 import GithubIcon from '../components/GithubIcon.astro'
-import '@fontsource/inter'
+import '@fontsource/inter/400.css'
+import '@fontsource/inter/300.css'
 ---
 
 <!DOCTYPE html>
@@ -41,7 +41,14 @@ import '@fontsource/inter'
         <GithubIcon className='fill-emerald-300 ml-5' />
       </a>
     </header>
-    <slot />
-    <Footer />
+    <main class='max-w-2xl mx-auto mt-8'>
+      <slot />
+    </main>
+    <footer
+      class='max-w-2xl mx-auto text-center text-sm font-light text-zinc-400 py-4'
+    >
+      © {new Date().getFullYear()}, Built with{' '}
+      <a href='https://astro.build/'>Astro</a>
+    </footer>
   </body>
 </html>
