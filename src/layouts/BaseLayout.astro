@@ -5,8 +5,10 @@ import { Image } from '@astrojs/image/components'
 import profilePic from '../images/profile-pic.png'
 import TwitterIcon from '../components/TwitterIcon.astro'
 import GithubIcon from '../components/GithubIcon.astro'
+import '../styles/global.css'
 import '@fontsource/inter/400.css'
 import '@fontsource/inter/300.css'
+import '@fontsource/fira-code'
 ---
 
 <!DOCTYPE html>
@@ -45,8 +47,9 @@ import '@fontsource/inter/300.css'
       <slot />
     </main>
     <footer
-      class='max-w-2xl mx-auto text-center text-sm font-light text-zinc-400 py-4'
+      class='max-w-2xl mx-auto text-center text-sm font-light text-zinc-400 pt-16 pb-8'
     >
+      <hr class='border-zinc-700 pb-16' />
       © {new Date().getFullYear()}, Built with{' '}
       <a href='https://astro.build/'>Astro</a>
     </footer>

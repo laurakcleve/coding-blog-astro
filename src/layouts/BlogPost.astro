@@ -3,14 +3,26 @@ import type { CollectionEntry } from 'astro:content'
 import BaseLayout from './BaseLayout.astro'
 type Props = CollectionEntry<'blog'>['data']
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props
+const { title, date, updatedDate, heroImage } = Astro.props
 ---
 
 <BaseLayout>
   <article>
     {heroImage && <img width={720} height={360} src={heroImage} alt='' />}
-    <h1 class='title'>{title}</h1>
-    {pubDate && <time>{pubDate}</time>}
+    <header class='mb-14'>
+      <h1 class='text-3xl font-normal my-3'>
+        {title}
+      </h1>
+      <p class='text-sm text-zinc-300'>
+        {
+          date.toLocaleDateString('en-us', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          })
+        }
+      </p>
+    </header>
     {
       updatedDate && (
         <div>
@@ -18,7 +30,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
         </div>
       )
     }
-    <hr />
-    <slot />
+    <div class='prose prose-invert'>
+      <slot />
+    </div>
   </article>
 </BaseLayout>

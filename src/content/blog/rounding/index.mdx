@@ -12,31 +12,31 @@ Example: `41.37 + 41.05 + 14.33 + 1.95 + 1.30 =` **`100`**
 - Ceiling: `42 + 42 + 15 + 2 + 2 =` **`103`**
 - Rounding: `41 + 41 + 14 + 2 + 1 =` **`99`**
 
-One solution to this problem is to use the [Largest Remainder method](https://www.wikiwand.com/en/Largest_remainder_method).
+One solution to this problem is to use the <a href="https://en.wikipedia.org//wiki/Largest_remainder_method" target="_blank" rel="noopener noreferrer">Largest Remainder method</a>.
 
 First you truncate each value, while preserving the decimal remainder.
 
-| <div style="width:60px"></div> |        |
-| :----------------------------- | :----- |
-| `41`                           | `0.37` |
-| `41`                           | `0.05` |
-| `14`                           | `0.33` |
-| `1`                            | `0.95` |
-| `1`                            | `0.30` |
+|      |        |
+| :--- | :----- |
+| `41` | `0.37` |
+| `41` | `0.05` |
+| `14` | `0.33` |
+| `1`  | `0.95` |
+| `1`  | `0.30` |
 
 Total: `98`
 
 Then you look at the remainders, take the biggest one, and add `1` to its truncated value.
 
-The largest from above is `0.95`, so add `1` to the fourth number (`1` becomes `2`)
+The largest from above is `0.95`, so add `1` to the fourth number (`1` becomes `2`).
 
-| <div style="width:60px"></div> |        |
-| :----------------------------- | :----- |
-| `41`                           | `0.37` |
-| `41`                           | `0.05` |
-| `14`                           | `0.33` |
-| `2`                            |        |
-| `1`                            | `0.30` |
+|      |        |
+| :--- | :----- |
+| `41` | `0.37` |
+| `41` | `0.05` |
+| `14` | `0.33` |
+| `2`  |        |
+| `1`  | `0.30` |
 
 Total: `99`
 
@@ -44,17 +44,17 @@ Repeat until your total is `100`.
 
 Next largest remainder is `0.37`, so `41` becomes `42`.
 
-| <div style="width:60px"></div> |        |
-| :----------------------------- | :----- |
-| `42`                           |        |
-| `41`                           | `0.05` |
-| `14`                           | `0.33` |
-| `2`                            |        |
-| `1`                            | `0.30` |
+|      |        |
+| :--- | :----- |
+| `42` |        |
+| `41` | `0.05` |
+| `14` | `0.33` |
+| `2`  |        |
+| `1`  | `0.30` |
 
 Total: `100`
 
-This makes your final numbers `42 + 41 + 14 + 2 + 1 = 100`
+This makes your final numbers `42 + 41 + 14 + 2 + 1 = 100`.
 
 Here's an example of the implementation for a collection of star ratings:
 
@@ -76,7 +76,7 @@ function calcPercentages(ratings) {
   }, {})
 
   const decimals = Object.entries(ratings)
-    .map(entry => {
+    .map((entry) => {
       entry[1] = ((entry[1] / totalRatings) * 100) % 1
       return entry
     })

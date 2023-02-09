@@ -16,7 +16,7 @@ const posts = (await getCollection('blog')).sort(
         <li class='mb-20'>
           <div class='mb-5'>
             <h2 class='text-lg sm:text-2xl font-normal my-2 leading-6'>
-              <a href={post.slug}>{post.data.title}</a>
+              <a href={`blog/${post.slug}`}>{post.data.title}</a>
             </h2>
             <div class='text-xs sm:text-sm text-zinc-400'>
               <time datetime={post.data.date.toISOString()}>
