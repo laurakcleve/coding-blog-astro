@@ -12,7 +12,11 @@ When running tests as part of your CI, you're going to need to be able to hit yo
 In Github (you have to be the repository owner), go to the settings of your repo, click the Secrets tab, then add a New repository secret. This is similar to adding environment variables to your site if you're deploying from Netlify or Vercel.
 
 <a href={ghScreenshot.src} target='_blank'>
-  <Picture src={ghScreenshot} widths={[800, 400, 200]} />
+  <Picture
+    src={ghScreenshot}
+    widths={[800, 400, 200]}
+    sizes='(max-width: 800px) 100vw, 800px'
+  />
 </a>
 
 Here's a link to the <a href="https://docs.github.com/en/actions/security-guides/encrypted-secrets" target="_blank" rel="noopener noreferrer">Github docs</a>.
