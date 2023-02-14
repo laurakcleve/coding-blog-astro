@@ -18,7 +18,10 @@ import '@fontsource/fira-code'
   </head>
   <body class='bg-zinc-800 min-h-screen text-zinc-50 px-4'>
     <header class='max-w-2xl mx-auto flex items-center py-5'>
-      <div class='flex items-center flex-1'>
+      <a
+        href='/'
+        class='text-xl sm:text-2xl text-zinc-100 flex items-center flex-1'
+      >
         <Picture
           src={profilePic}
           width={360}
@@ -29,8 +32,9 @@ import '@fontsource/fira-code'
           alt='Profile picture'
           class='rounded-full mr-4 w-12'
         />
-        <a href='/' class='text-xl sm:text-2xl text-zinc-100'>{SITE_TITLE}</a>
-      </div>
+        {SITE_TITLE}
+      </a>
+
       <a
         href='https://twitter.com/laurak_cleve'
         target='_blank'
