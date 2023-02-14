@@ -1,7 +1,7 @@
 ---
 import BaseHead from '../components/BaseHead.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
-import { Image } from '@astrojs/image/components'
+import { Picture } from '@astrojs/image/components'
 import profilePic from '../images/profile-pic.png'
 import TwitterIcon from '../components/TwitterIcon.astro'
 import GithubIcon from '../components/GithubIcon.astro'
@@ -19,10 +19,12 @@ import '@fontsource/fira-code'
   <body class='bg-zinc-800 min-h-screen text-zinc-50 px-4'>
     <header class='max-w-2xl mx-auto flex items-center py-5'>
       <div class='flex items-center flex-1'>
-        <Image
+        <Picture
           src={profilePic}
-          width={100}
-          height={100}
+          width={360}
+          height={360}
+          widths={[50]}
+          sizes='50px'
           alt='Profile picture'
           class='rounded-full mr-4 w-12'
         />
@@ -33,16 +35,18 @@ import '@fontsource/fira-code'
         target='_blank'
         rel='noopener noreferrer'
         aria-label='Twitter'
+        class='w-12 h-12 flex items-center justify-center'
       >
-        <TwitterIcon className='fill-emerald-300 w-6' />
+        <TwitterIcon className='w-7 fill-emerald-300' />
       </a>
       <a
         href='https://github.com/laurakcleve'
         target='_blank'
         rel='noopener noreferrer'
         aria-label='Github'
+        class='w-12 h-12 flex items-center justify-center'
       >
-        <GithubIcon className='fill-emerald-300 ml-5' />
+        <GithubIcon className='w-7 fill-emerald-300' />
       </a>
     </header>
     <main class='max-w-2xl mx-auto mt-8'>
